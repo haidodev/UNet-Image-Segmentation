@@ -1,0 +1,11 @@
+__pycache__
+.vscode
+runs
+onnx
+dataset
+checkpoints
+test
+*.log
+*.pth
+*.ipynb
+*.sh
