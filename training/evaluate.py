@@ -1,6 +1,6 @@
 import torch
-from training.dataset import get_test_dataloader
-from training.utils import get_model, dice_score
+from dataset import get_test_dataloader
+from utils import get_model, dice_score
 import argparse
 
 parser = argparse.ArgumentParser(description="Evaluate UNet variants on Oxford-IIIT Pet Dataset")
