@@ -1,7 +1,7 @@
 import torch
 from dataset import get_dataloader
 from torch.utils.tensorboard import SummaryWriter
-from utils import get_model, dice_score, iou_score, recall_score, precision_score, get_loss_function
+from utils import get_model, dice_score, iou_score, recall_score, precision_score, get_loss_function, set_seed
 import datetime
 import argparse
 
@@ -66,6 +66,8 @@ def train(model, train_loader, val_loader, device, criterion, optimizer, epochs,
         print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_log:.4f}, Val Dice: {val_dice:.4f}")
         
 def main():
+    set_seed(args.seed)
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
     print("Configurations:")
